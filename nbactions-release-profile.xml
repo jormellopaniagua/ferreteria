@@ -52,4 +52,17 @@
                 <exec.appArgs></exec.appArgs>
             </properties>
         </action>
+        <action>
+            <actionName>build</actionName>
+            <preAction>build-with-dependencies</preAction>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <Env.JAVA_HOME>C:\Users\Usuario\AppData\Local\Java\zulu11.50.19-ca-jdk11.0.12-win_x64\zulu11.50.19-ca-jdk11.0.12-win_x64</Env.JAVA_HOME>
+            </properties>
+        </action>
     </actions>
