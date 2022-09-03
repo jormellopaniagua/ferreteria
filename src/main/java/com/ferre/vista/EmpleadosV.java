@@ -189,7 +189,7 @@ public class EmpleadosV extends javax.swing.JFrame {
             }
         });
 
-        Btn_delEmpleado.setBackground(new java.awt.Color(0, 102, 102));
+        Btn_delEmpleado.setBackground(new java.awt.Color(255, 51, 51));
         Btn_delEmpleado.setForeground(new java.awt.Color(238, 238, 238));
         Btn_delEmpleado.setText("BORRAR");
         Btn_delEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -284,7 +284,7 @@ public class EmpleadosV extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

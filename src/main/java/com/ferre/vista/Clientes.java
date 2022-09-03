@@ -188,7 +188,8 @@ public class Clientes extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGO FERRE 2.jpg"))); // NOI18N
 
-        btn_borrar.setLabel("borrar");
+        btn_borrar.setBackground(new java.awt.Color(255, 51, 51));
+        btn_borrar.setText("BORRAR");
         btn_borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_borrarActionPerformed(evt);
@@ -207,22 +208,21 @@ public class Clientes extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(127, 127, 127)
-                                .addComponent(Btn_registrarCliente)
-                                .addGap(56, 56, 56)
-                                .addComponent(Btn_consCliente)
-                                .addGap(70, 70, 70)
-                                .addComponent(Btn_actualizarCliente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_borrar))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addGap(66, 66, 66)
-                                .addComponent(txt_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(150, 150, 150))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(66, 66, 66)
+                        .addComponent(txt_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(150, 150, 150))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(Btn_registrarCliente)
+                        .addGap(56, 56, 56)
+                        .addComponent(Btn_consCliente)
+                        .addGap(70, 70, 70)
+                        .addComponent(Btn_actualizarCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(119, 119, 119))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,10 +378,10 @@ public class Clientes extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn_actualizarCliente;
-    private javax.swing.JButton Btn_consCliente;
-    private javax.swing.JButton Btn_registrarCliente;
-    private javax.swing.JTable Tbl_Cliente;
+    public javax.swing.JButton Btn_actualizarCliente;
+    public javax.swing.JButton Btn_consCliente;
+    public javax.swing.JButton Btn_registrarCliente;
+    public javax.swing.JTable Tbl_Cliente;
     public javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_borrar;
     public javax.swing.JButton btn_home;
@@ -392,7 +392,7 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txt_cliente;
+    public javax.swing.JTextField txt_cliente;
     // End of variables declaration//GEN-END:variables
     public void leerDatos(){
         List<Cliente> cliente = clientectrl.getAll();

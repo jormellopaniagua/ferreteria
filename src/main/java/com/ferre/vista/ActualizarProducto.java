@@ -48,7 +48,7 @@ public class ActualizarProducto extends javax.swing.JFrame {
     public JComboBox<String> getTipo(){
         return jComboBox_tipo;
     }
-    public JTextField getUnidad(){
+    public JComboBox<String> getUnidad(){
         return txt_unidad;
     }
     public JTextField getCantidad(){
@@ -90,10 +90,10 @@ public class ActualizarProducto extends javax.swing.JFrame {
         txt_precioVenta = new javax.swing.JTextField();
         txt_precioCompra = new javax.swing.JTextField();
         Btn_actProduct = new javax.swing.JButton();
-        txt_unidad = new javax.swing.JTextField();
         unity = new javax.swing.JLabel();
         jComboBox_tipo = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
+        txt_unidad = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,19 +169,15 @@ public class ActualizarProducto extends javax.swing.JFrame {
             }
         });
 
-        txt_unidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_unidadActionPerformed(evt);
-            }
-        });
-
         unity.setBackground(new java.awt.Color(0, 102, 204));
         unity.setForeground(new java.awt.Color(204, 204, 204));
-        unity.setText("UNIDAD");
+        unity.setText("UNIDAD DE VENTA");
 
-        jComboBox_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "miscelaneos", "plomeria", "electricidad", "pintura" }));
+        jComboBox_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "miscelaneos", "plomeria", "electricos", "pintura" }));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGO FERRE 2.jpg"))); // NOI18N
+
+        txt_unidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "METRO", "UNIDAD", "KILO", "BULTO" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -219,10 +215,14 @@ public class ActualizarProducto extends javax.swing.JFrame {
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel9)
                                             .addComponent(unity))
-                                        .addGap(17, 17, 17)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txt_precioCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txt_unidad, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(17, 17, 17)
+                                                .addComponent(txt_precioCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txt_unidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(8, 8, 8))))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(28, 28, 28)
@@ -232,7 +232,7 @@ public class ActualizarProducto extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -336,15 +336,11 @@ public class ActualizarProducto extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txt_unidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_unidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_unidadActionPerformed
-
     private void Btn_actProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_actProductActionPerformed
         // TODO add your handling code here:}
         Productos producto = new Productos();
         if(this.getCodigo().getText()!= "" && this.getNombre().getText()!= "" && this.getMedida().getText() != ""
-            && this.getTipo().getSelectedItem().toString()!="" && this.getUnidad().getText()!="" && getPrecioC().getText() != ""
+            && this.getTipo().getSelectedItem().toString()!="" && this.getUnidad().getSelectedItem()!="" && getPrecioC().getText() != ""
                 && this.getPrecioV().getText()!="")
         {
             try{
@@ -353,7 +349,7 @@ public class ActualizarProducto extends javax.swing.JFrame {
             producto.setMedida(this.getMedida().getText());
             producto.setTipo(this.getTipo().getSelectedItem().toString());
             producto.setExistencia(Integer.valueOf(this.getCantidad().getText()));
-            producto.setUnidad(this.getUnidad().getText());
+            producto.setUnidad(this.getUnidad().getSelectedItem().toString());
             producto.setPrecioCompra(Double.valueOf(this.getPrecioC().getText()));
             producto.setPrecioVenta(Double.valueOf(this.getPrecioV().getText()));
                 try{
@@ -420,7 +416,7 @@ public class ActualizarProducto extends javax.swing.JFrame {
     private javax.swing.JTextField txt_nombreProducto;
     private javax.swing.JTextField txt_precioCompra;
     private javax.swing.JTextField txt_precioVenta;
-    private javax.swing.JTextField txt_unidad;
+    private javax.swing.JComboBox<String> txt_unidad;
     private javax.swing.JLabel unity;
     // End of variables declaration//GEN-END:variables
     public void setCampos(Productos p){
@@ -428,7 +424,7 @@ public class ActualizarProducto extends javax.swing.JFrame {
         this.getNombre().setText(p.getNombre());
         this.getMedida().setText(String.valueOf(p.getMedida()));
         this.getTipo().setSelectedItem(p.getTipo());
-        this.getUnidad().setText(String.valueOf(p.getUnidad()));
+        this.getUnidad().setSelectedItem(String.valueOf(p.getUnidad()));
         this.getPrecioV().setText(String.valueOf(p.getPrecioVenta()));
         this.getPrecioC().setText(String.valueOf(p.getPrecioCompra()));
     }
